@@ -1,0 +1,36 @@
+<h1 class="text-center">All Movies</h1><br>
+
+<div class="input" style="text-align: center;">
+    <input type="text" placeholder="Search here.." [(ngModel)]="term"><br><br>
+</div><br>
+
+<div class="container">
+    <div class="row">
+        <div class="col-6 col-md-3 col-lg-3" *ngFor="let movie of movies |filter:term">
+
+            <div class="card h-100" style="width: 14rem; ">
+
+                <img class="card-img-top" src="{{movie.imageUrl}}" alt="Card image cap">
+                <div class="card-body" style="background-color: rgb(237, 251, 192);">
+                    
+                    <h5 class="card-title">{{movie.name}}</h5>
+                    <b>Id: </b>{{movie.id}}<br>
+                    <b>Genre:</b> {{movie.genre}}<br>
+                    <b>Description:</b> {{movie.description}}<br>
+                    <b>Language:</b> {{movie.language}}<br>
+                    <b>Price:</b> ${{movie.price}}<br>
+                    <b>Show Timing:</b> {{movie.showTime}}<br>
+                </div>
+
+                <div class="card-footer" style="background-color: rgb(228, 243, 238);">
+               
+                    <a class="btn btn-warning" style="float: left;" routerLink="/editmovie/{{movie.id}}" role="button">Edit</a>
+                    <a class="btn btn-danger" style="float: right;" routerLink="/delmovie/{{movie.id}}" role="button">Delete</a>
+                
+                </div>
+            </div>
+            <br><br>
+        </div>
+    </div><br><br>
+    <a class="btn btn-primary" routerLink="/adminhome" role="button">Back</a>
+</div>

@@ -1,0 +1,36 @@
+<h1 class="text-center">Add Movie</h1><br>
+<div class="container">
+<form (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label>Movie name</label>
+    <input type="text" class="form-control" name="name" id="name" placeholder="Enter name" [(ngModel)]="movie.name">
+  </div>
+  <div class="form-group">
+    <label>Language</label>
+    <input type="text" class="form-control" name="language" id="language" placeholder="Enter language" [(ngModel)]="movie.language">
+  </div>
+  <div class="form-group">
+    <label>Genre</label>
+    <input type="text" class="form-control" name="genre" id="genre" placeholder="Enter genre" [(ngModel)]="movie.genre">
+  </div>
+  <div class="form-group">
+    <label>Description</label>
+    <input type="text" class="form-control" name="description" id="description" placeholder="Enter description" [(ngModel)]="movie.description">
+  </div>
+  <div class="form-group">
+    <label>Price</label>
+    <input type="text" class="form-control" name="price" id="price" placeholder="Enter price" [(ngModel)]="movie.price">
+  </div>
+  <div class="form-group">
+    <label>Show Timing</label>
+    <input type="text" class="form-control" name="time" id="time" placeholder="Enter show time" [(ngModel)]="movie.showTime">
+  </div>
+  <div class="form-group">
+    <label>Image</label>
+    <input type="text" class="form-control" name="image" id="image" placeholder="Enter image address" [(ngModel)]="movie.imageUrl">
+  </div><br>
+ 
+  <button type="submit" class="btn btn-success">Add</button>
+</form><br>
+<a class="btn btn-primary" routerLink="/adminhome" role="button">Back</a>
+</div>

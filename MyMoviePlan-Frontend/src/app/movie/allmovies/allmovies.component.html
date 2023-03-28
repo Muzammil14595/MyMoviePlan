@@ -1,0 +1,36 @@
+<h1 class="text-center">All Movies</h1><br>
+<div class="input" style="text-align: center;">
+    <input type="text" placeholder="Search here.." [(ngModel)]="term"><br><br>
+</div><br>
+<div class="container">
+    <div class="row">
+        <div class="col-lg" *ngFor="let movie of movies |filter:term">
+
+            <div class="card h-100" style="width: 14rem;">
+
+                <img class="card-img-top" src="{{movie.imageUrl}}" alt="Card
+                    image cap">
+                <div class="card-body" style="background-color: rgb(237, 251,
+                    192); height: auto;">
+                    <h5 class="card-title">{{movie.name}}</h5>
+                    <b> Genre:</b> {{movie.genre}}<br>
+                    <b>Show Timing:</b> {{movie.showTime}}<br>
+                    <b>Description:</b> {{movie.description}}<br>
+                    <b>Price:</b> ${{movie.price}}<br>
+                    <b>Language:</b> {{movie.language}}
+                </div>
+
+                <div class="card-footer" style="background-color: rgb(228, 243,
+                    238); text-align: center;">
+                    <!-- <label class="form-label" for="typeNumber">Select No. of tickets</label>
+                    <input min="1" value="1" type="number" id="typeNumber"
+                        class="form-control" />
+                    <br> -->
+                    <a class="btn btn-danger" routerLink="/bookseats/{{movie.id}}"
+                        role="button">Book</a>
+                </div>
+            </div>
+            <br><br>
+        </div>
+    </div>
+</div>
